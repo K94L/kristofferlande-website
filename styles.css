@@ -409,13 +409,14 @@ section:nth-of-type(even) {
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(10, 10, 10, 0.75);
   color: var(--text-primary);
-  font-size: 0.98rem;
+  font-size: 1rem;
   transition: var(--transition);
 }
 
 .input-group textarea {
   resize: vertical;
   min-height: 120px;
+  font-size: 1rem;
 }
 
 .input-group input:focus,
