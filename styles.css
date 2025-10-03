@@ -194,7 +194,7 @@ header {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  font-size: clamp(2.1rem, 3.4vw, 3.2rem);
   letter-spacing: 0.02em;
   font-weight: 700;
 }
