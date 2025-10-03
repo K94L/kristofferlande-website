@@ -133,7 +133,7 @@
               </form>
             </div>
             <aside class="contact-media">
-              <img src="https://impro.usercontent.one/appid/oneComWsb/domain/kristofferlande.com/media/kristofferlande.com/onewebmedia/Portrettbilde%203%20-%20Lande.jpg" alt="Kristoffer Lande på scenen">
+              <img src="Assets/contact-portrait.jpg" alt="Kristoffer Lande på scenen">
               <p>Kristoffer møter publikum med energi og konkrete historier fra en skalerende tech-startup.</p>
             </aside>
           </div>
@@ -143,8 +143,15 @@
 
     <footer>
       <div class="container">
-        Copyright &copy; K94L Holding AS 2024. Alle rettigheter forbeholdt.
+        <span id="footer-year"></span>
       </div>
     </footer>
+    <script>
+      const footerYear = document.getElementById('footer-year');
+      if (footerYear) {
+        const year = new Date().getFullYear();
+        footerYear.innerHTML = `&copy; K94L Holding AS ${year}`;
+      }
+    </script>
   </body>
 </html>
