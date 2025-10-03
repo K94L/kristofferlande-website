@@ -112,13 +112,28 @@
                   <span>kristoffer.lande@outlook.com</span>
                 </div>
               </div>
-              <p>
-                Trykk på knappen under for å sende en e-postforespørsel – emnefeltet fylles inn automatisk slik at dialogen kan starte med en gang.
-              </p>
-              <div class="cta-group">
-                <a class="btn btn-primary" href="mailto:kristoffer.lande@outlook.com?subject=Foresp%C3%B8rsel%20om%20foredrag&body=Hei%20Kristoffer%2C%0A%0AJeg%20%C3%B8nsker%20%C3%A5%20vite%20mer%20om%20dine%20foredrag.%0A%0A%5BDel%20gjerne%20kort%20om%20arrangementet%20ditt%5D%0A%0AMed%20vennlig%20hilsen%2C%0A">Send e-post</a>
-                <a class="btn btn-outline" href="tel:+4745212452">Ring +47&nbsp;452&nbsp;12&nbsp;452</a>
-              </div>
+              <form id="contact-form">
+                <div class="input-group">
+                  <label for="name">Navn</label>
+                  <input id="name" name="name" type="text" placeholder="Navn" required>
+                </div>
+                <div class="input-group">
+                  <label for="email">E-post</label>
+                  <input id="email" name="email" type="email" placeholder="navn@firma.no" required>
+                </div>
+                <div class="input-group">
+                  <label for="company">Selskap</label>
+                  <input id="company" name="company" type="text" placeholder="Selskap eller organisasjon">
+                </div>
+                <div class="input-group">
+                  <label for="message">Melding</label>
+                  <textarea id="message" name="message" placeholder="Fortell kort om arrangementet eller forespørselen"></textarea>
+                </div>
+                <div class="cta-group">
+                  <button class="btn btn-primary" type="submit">Send e-post</button>
+                  <a class="btn btn-outline" href="tel:+4745212452">Ring +47&nbsp;452&nbsp;12&nbsp;452</a>
+                </div>
+              </form>
             </div>
             <aside class="contact-media">
               <img src="Assets/contact-portrait.jpg" alt="Kristoffer Lande på scenen">
@@ -139,6 +154,46 @@
       if (footerYear) {
         const year = new Date().getFullYear();
         footerYear.innerHTML = `&copy; K94L Holding AS ${year}`;
+      }
+
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const nameInput = contactForm.querySelector('#name');
+          const emailInput = contactForm.querySelector('#email');
+          const companyInput = contactForm.querySelector('#company');
+          const messageInput = contactForm.querySelector('#message');
+
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const company = companyInput.value.trim();
+          const userMessage = messageInput.value.trim();
+
+          const bodyLines = [
+            'Hei Kristoffer,',
+            '',
+            userMessage || '[Your message]',
+            '',
+            'Med vennlig hilsen,',
+            name || '[Input Name]'
+          ];
+
+          bodyLines.push(company || '[Input Company]');
+
+          const body = bodyLines.join('\n');
+          const subject = 'Forespørsel om foredrag';
+
+          let mailto = `mailto:kristoffer.lande@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          // In some clients mailto `cc` can be used to include sender email; provide as reply-to hint
+          if (email) {
+            mailto += `&cc=${encodeURIComponent(email)}`;
+          }
+
+          window.location.href = mailto;
+        });
       }
     </script>
   </body>
