@@ -341,7 +341,7 @@ section:nth-of-type(even) {
 }
 
 .referral-logo {
-  max-width: 120px;
+  max-width: 80px;
   width: 100%;
   height: auto;
   opacity: 0.6;
@@ -526,7 +526,7 @@ footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 18px;
 }
 
 .talk-card .talk-body {
