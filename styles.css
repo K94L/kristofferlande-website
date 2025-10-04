@@ -194,7 +194,7 @@ header {
 }
 
 .hero-title {
-  font-size: clamp(2.1rem, 3.4vw, 3.2rem);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
   letter-spacing: 0.02em;
   font-weight: 700;
 }
@@ -210,6 +210,14 @@ header {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.contact-card .cta-group .btn {
+  flex: 1 1 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 /* Sections */
@@ -320,6 +328,14 @@ section:nth-of-type(even) {
   position: relative;
 }
 
+.referral-logo {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
+}
+
 .referral-card::before {
   content: "\201C";
   position: absolute;
@@ -410,6 +426,7 @@ section:nth-of-type(even) {
   background: rgba(10, 10, 10, 0.75);
   color: var(--text-primary);
   font-size: 1rem;
+  font-family: inherit;
   transition: var(--transition);
 }
 
@@ -417,6 +434,7 @@ section:nth-of-type(even) {
   resize: vertical;
   min-height: 120px;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 .input-group input:focus,
