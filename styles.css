@@ -5,8 +5,8 @@
   --bg-panel: rgba(33, 33, 33, 0.72);
   --text-primary: #f5f5f5;
   --text-muted: #c8c8c8;
-  --accent: #f5c15d;
-  --accent-soft: rgba(245, 193, 93, 0.1);
+  --accent: #ff4e4a;
+  --accent-soft: rgba(255, 78, 74, 0.12);
   --border-radius: 18px;
   --max-width: 1180px;
   --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.35);
@@ -158,6 +158,11 @@ header {
   align-items: center;
   padding: 96px 0 120px;
   overflow: hidden;
+}
+
+.hero.home {
+  min-height: 70vh;
+  padding: 80px 0 90px;
 }
 
 .hero::before {
