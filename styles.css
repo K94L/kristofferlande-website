@@ -321,7 +321,7 @@ section:nth-of-type(even) {
 /* Testimonials */
 .referrals {
   display: grid;
-  gap: 32px;
+  gap: 48px;
 }
 
 .referral-card {
