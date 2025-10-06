@@ -329,10 +329,7 @@ section:nth-of-type(even) {
 }
 
 .referral-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  display: block;
   margin-bottom: 16px;
 }
 
@@ -341,11 +338,20 @@ section:nth-of-type(even) {
 }
 
 .referral-logo {
-  max-width: 80px;
-  width: 100%;
-  height: auto;
-  opacity: 0.6;
-  filter: grayscale(1) brightness(1.2);
+  position: absolute;
+  top: -32px;
+  right: 24px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(5, 5, 5, 0.65);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.referral-card {
+  position: relative;
 }
 
 .referral-card::before {
