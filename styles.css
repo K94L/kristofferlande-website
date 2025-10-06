@@ -498,7 +498,7 @@ footer {
 /* Foredrag page specific */
 .hero.home::after,
 .hero.foredrag::after {
-  background-image: url('/Assets/Foredrag2.jpg');
+  background-image: url('/assets/images/hero-foredrag.jpg');
   background-position: top center;
   opacity: 0.45;
 }
